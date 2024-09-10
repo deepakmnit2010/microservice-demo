@@ -1,13 +1,13 @@
-package com.microservice.demo.microservicedemo;
+package com.microservice.demo.firstservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MicroserviceDemoApplication {
+public class FirstServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MicroserviceDemoApplication.class, args);
+		SpringApplication.run(FirstServiceApplication.class, args);
 	}
 
 }

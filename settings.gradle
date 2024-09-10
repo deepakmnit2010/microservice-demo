@@ -1,1 +1,11 @@
 rootProject.name = 'microservice-demo'
+
+def projectDirs = [
+        'services',
+]
+
+projectDirs.each {
+    file(it).eachDir { dir ->
+        includeBuild dir
+    }
+}
