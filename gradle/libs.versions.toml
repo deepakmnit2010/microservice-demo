@@ -1,0 +1,22 @@
+[versions]
+java = "17"
+springBoot = "3.1.7"
+springDependencyManagement = "1.1.4"
+spring = "6.1.2"
+sl4j = "2.0.7"
+lombok = "1.18.30"
+gitProperties = "2.4.1"
+
+[libraries]
+springBoot = { module = "org.springframework.boot:spring-boot", version.ref = "springBoot" }
+spring = { module = "org.springframework:spring-framework-bom", version.ref = "spring" }
+sl4j = { module = "org.slf4j:slf4j-api", version.ref = "sl4j" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+springStarterWeb = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "springBoot" }
+springBootTest = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springBoot" }
+
+[plugins]
+springBoot = { id = "org.springframework.boot", version.ref = "springBoot" }
+springDependencyManagement = { id = "io.spring.dependency-management", version.ref = "springDependencyManagement" }
+gitProperties = { id = "com.gorylenko.gradle-git-properties", version.ref = "gitProperties" }
+springDependencyManagementOld = { id = "io.spring.dependency-management", version = "1.0.15.RELEASE" }
