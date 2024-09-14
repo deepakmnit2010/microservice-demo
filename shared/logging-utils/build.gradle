@@ -1,0 +1,41 @@
+plugins {
+    alias(libs.plugins.springBoot)
+    alias(libs.plugins.springDependencyManagement)
+    id 'java'
+}
+
+group = 'io.stackfin.app'
+version = '0.1.0'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(libs.versions.java.get())
+    }
+}
+
+dependencies {
+    implementation platform(libs.spring)
+    implementation 'io.micrometer:micrometer-tracing-bridge-brave:1.2.0'
+    implementation 'io.zipkin.reporter2:zipkin-reporter-brave:2.16.4'
+    compileOnly libs.sl4j
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+    compileOnly 'com.fasterxml.jackson.core:jackson-databind'
+    compileOnly 'org.springframework:spring-web'
+    implementation 'org.springframework:spring-aop'
+    compileOnly 'org.springframework:spring-context'
+	implementation libs.bundles.aopDeps
+    implementation libs.logstash
+    compileOnly libs.servlet
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events("passed", "failed", "skipped")
+    }
+}

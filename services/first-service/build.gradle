@@ -4,7 +4,7 @@ plugins {
     id 'java'
 }
 
-group = 'com.microservice.demo'
+group = 'io.stackfin.demo'
 version = '0.0.1-SNAPSHOT'
 
 java {
@@ -31,6 +31,7 @@ jar {
 dependencies {
 	implementation libs.springStarterWeb
     implementation libs.springBootTest
+    implementation "io.stackfin.app:logging-utils"
 }
 
 tasks.named('test') {

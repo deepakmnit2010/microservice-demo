@@ -1,6 +1,4 @@
-rootProject.name = 'first-service'
-
-includeBuild '../../shared/logging-utils'
+rootProject.name = 'logging-utils'
 
 dependencyResolutionManagement {
     versionCatalogs {

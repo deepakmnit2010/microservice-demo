@@ -6,6 +6,9 @@ spring = "6.1.2"
 sl4j = "2.0.7"
 lombok = "1.18.30"
 gitProperties = "2.4.1"
+aop = "1.9.20"
+logstash = "7.0.1"
+servlet = "6.0.0"
 
 [libraries]
 springBoot = { module = "org.springframework.boot:spring-boot", version.ref = "springBoot" }
@@ -14,9 +17,17 @@ sl4j = { module = "org.slf4j:slf4j-api", version.ref = "sl4j" }
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
 springStarterWeb = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "springBoot" }
 springBootTest = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springBoot" }
+logstash = { module = "net.logstash.logback:logstash-logback-encoder", version.ref = "logstash" }
+aspectjrt = { module = "org.aspectj:aspectjrt", version.ref = "aop" }
+aspectjweaver = { module = "org.aspectj:aspectjweaver", version.ref = "aop" }
+servlet = { module = "jakarta.servlet:jakarta.servlet-api", version.ref = "servlet" }
 
 [plugins]
 springBoot = { id = "org.springframework.boot", version.ref = "springBoot" }
 springDependencyManagement = { id = "io.spring.dependency-management", version.ref = "springDependencyManagement" }
 gitProperties = { id = "com.gorylenko.gradle-git-properties", version.ref = "gitProperties" }
 springDependencyManagementOld = { id = "io.spring.dependency-management", version = "1.0.15.RELEASE" }
+
+[bundles]
+aopDeps = ["aspectjweaver", "aspectjrt"]
+

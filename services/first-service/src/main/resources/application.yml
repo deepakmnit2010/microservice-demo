@@ -1,0 +1,13 @@
+spring:
+  config:
+    name: demo-service
+    import: common.properties
+  profiles:
+    active: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+    import: application-local.properties
